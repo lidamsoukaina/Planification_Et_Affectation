@@ -37,7 +37,7 @@ def generate_data(name_experience: str, path:str,horizon:int, nb_qualifications:
             working_days_per_qualification[qualification] = randint(1, horizon)
         jobs.append({"name": "Job_"+str(i), "gain": gain, "due_date": due_date, "daily_penalty": 3, "working_days_per_qualification": working_days_per_qualification})
     # Save the instance
-    instance = {"horizon": horizon, "staff": staff, "jobs": jobs}
+    instance = {"horizon": horizon, "qualifications": qualifications, "staff": staff, "jobs": jobs}
     filePath = path + name_experience + ".json"
     with open(filePath, 'w') as fp:
         json.dump(instance, fp)
